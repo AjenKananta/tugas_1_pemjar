@@ -29,7 +29,6 @@ func (s *Storage) Load() (*AppData, error) {
 	file, err := os.Open(s.filename)
 	if err != nil {
 		if os.IsNotExist(err) {
-			// Return empty data if file doesn't exist
 			return &AppData{
 				Tasks:      []Task{},
 				Moods:      []MoodEntry{},

@@ -21,7 +21,7 @@ type Task struct {
 	Description string    `json:"description"`
 	Completed   bool      `json:"completed"`
 	CreatedAt   time.Time `json:"created_at"`
-	Priority    int       `json:"priority"` // 1-3: 3 paling penting
+	Priority    int       `json:"priority"`
 }
 
 type MoodEntry struct {

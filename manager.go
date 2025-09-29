@@ -67,15 +67,14 @@ func (am *AppManager) ShowTasks() {
 	fmt.Println("\nYOUR TASKS:")
 	fmt.Println("========================")
 
-	// Sort by priority and completion status
 	tasks := make([]Task, len(am.data.Tasks))
 	copy(tasks, am.data.Tasks)
 
 	sort.Slice(tasks, func(i, j int) bool {
 		if tasks[i].Completed != tasks[j].Completed {
-			return !tasks[i].Completed // Uncompleted tasks first
+			return !tasks[i].Completed
 		}
-		return tasks[i].Priority > tasks[j].Priority // Higher priority first
+		return tasks[i].Priority > tasks[j].Priority
 	})
 
 	for _, task := range tasks {
